@@ -31,7 +31,7 @@ button {
     width: 600px;
     margin: auto;
     margin-top: 100px;
-    background-color: rgba(135,206,250,.7);
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     box-shadow: 0 8px 6px -6px rgba(0,0,0,.6);
 }

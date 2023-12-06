@@ -14,7 +14,6 @@ class Lapharian extends CI_Controller
     function index($year = NULL, $month = NULL)
     {
         $data['calender'] = $this->Model_lapharian->getcalender($year, $month);
-
         $data['cards'] = $this->cards();
         $this->template->load('template/template', 'laporan/lap_harian', $data);
     }

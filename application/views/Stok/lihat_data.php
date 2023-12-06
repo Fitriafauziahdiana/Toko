@@ -20,11 +20,11 @@
 </style>
 <?php if ($this->session->flashdata('message')) { ?>
 <div class="col-lg-12 alerts">
-	<div class="alert alert-dismissible alert-warning">
-		<button type="button" class="close" data-dismiss="alert">&times;</button>
-		<h4> <i class="icon fa fa-ban"></i>Warning</h4>
-		<p><?php echo $this->session->flashdata('message'); ?></p>
-	</div>
+<div class="alert alert-dismissible alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4> <i class="icon fa fa-check"></i> Suscess</h4>
+    	<p><?php echo $this->session->flashdata('message'); ?></p>
+    </div>
 </div>
 <?php } else { } ?>
 <section class="content">

@@ -1,11 +1,11 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/app/css/style.css">
 <?php if ($this->session->flashdata('message')) { ?>
 <div class="col-lg-12 alerts">
-	<div class="alert alert-dismissible alert-danger">
-		<button type="button" class="close" data-dismiss="alert">&times;</button>
-		<h4> <i class="icon fa fa-ban"></i> Error</h4>
-		<p><?php echo $this->session->flashdata('message'); ?></p>
-	</div>
+<div class="alert alert-dismissible alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4> <i class="icon fa fa-check"></i> Suscess</h4>
+    	<p><?php echo $this->session->flashdata('message'); ?></p>
+    </div>
 </div>
 <?php } else { } ?>
 

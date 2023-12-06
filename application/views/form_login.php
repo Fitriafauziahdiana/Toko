@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Point Of Sales | Log in</title>
-  <link rel="icon" href="<?=base_url()?>/assets/images/logo.png" type="image/png">
+  <title>Jojoba Pet Center | Log in</title>
+  <link rel="icon" href="<?=base_url()?>/assets/images/logo1.png" type="image/png">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -26,12 +26,12 @@
 
   <div class="container" id="loginContainer">
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="<?php echo base_url(); ?>assets/images/logo.png" style="width:230px;height:230px;"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="<?php echo base_url(); ?>assets/images/logo1.png" style="width:230px;height:230px;"/>
     <!--svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-120 100 1920 600" style="enable-background:new 0 0 1920 600;" xml:space="preserve"-->
       <style type="text/css">
         .st0 {
           fill: none;
-          stroke: #29ABE2;
+          stroke: #FFFFFF;
           stroke-width: 12;
           stroke-miterlimit: 10;
         }

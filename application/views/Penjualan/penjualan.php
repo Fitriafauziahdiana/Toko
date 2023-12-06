@@ -1,9 +1,9 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/app/css/style.css">
 <?php if ($this->session->flashdata('message')) { ?>
     <div class="col-lg-12 alerts">
-        <div class="alert alert-dismissible alert-danger">
+        <div class="alert alert-dismissible alert-success">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <h4> <i class="icon fa fa-ban"></i> Error</h4>
+            <h4> <i class="icon fa fa-check"></i> Suscess</h4>
             <p><?php echo $this->session->flashdata('message'); ?></p>
         </div>
     </div>
@@ -352,6 +352,7 @@
                                             <select id="payment" name="metode" class="form-control" style="width:100%;">
                                                 <option value="1">Cash</option>
                                                 <option value="2">Transfer</option>
+                                                <option value="3">Qris</option>
                                             </select>
                                         </div>
                                     </div>
@@ -522,8 +523,14 @@
             {
                 image: '../assets/dist/img/bank/niaga.png',
                 description: '',
-                value: '4',
+                value: '5',
                 text: 'CIMB Niaga'
+            },
+            {
+                image: '../assets/dist/img/bank/seabank.png',
+                description: '',
+                value: '6',
+                text: 'SeaBank'
             },
         ];
         let jsn = $("#byjson").msDropDown({

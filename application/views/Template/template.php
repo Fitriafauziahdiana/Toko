@@ -4,8 +4,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Point Of Sales | Dashboard</title>
-	<link rel="icon" href="<?=base_url()?>/assets/images/logo.png" type="image/png">
+	<title>Jojoba Pet Center | Dashboard</title>
+	<link rel="icon" href="<?=base_url()?>/assets/images/logo1.png" type="image/png">
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<!-- Bootstrap 3.3.7 -->
@@ -50,7 +50,7 @@
 				<!-- mini logo for sidebar mini 50x50 pixels -->
 				<span class="logo-mini"><b>C</b>P</span>
 				<!-- logo for regular state and mobile devices -->
-				<span class="logo-lg"><b>Point Of Sales</b></span>
+				<span class="logo-lg"><b>Jojoba Pet Center</b></span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
 			<nav class="navbar navbar-static-top">
@@ -73,7 +73,7 @@
 									<img src="<?php echo base_url('uploads/operator/') . $foto; ?>" class="img-circle" alt="User Image">
 									<p>
 										<?php echo $this->session->userdata['username']; ?>
-										<small>Anggota Sejak Juli 2021</small>
+										<small>Anggota Sejak Desember 2023</small>
 									</p>
 								</li>
 								<!-- Menu Body -->
@@ -212,7 +212,7 @@
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
 				<h1>
-					Point Of Sales
+				Jojoba Pet Center
 					<small>Control panel</small>
 				</h1>
 			</section>

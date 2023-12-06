@@ -76,8 +76,8 @@
                                 <div id="receipt-data">
                                     <div>
                                         <div style="text-align:center;">
-                                            <img src="<?php echo base_url(); ?>assets/dist/img/bilbil.png" style="max-width:150px;" alt="BILBILWEST">
-                                            <p style="text-align:center;"><strong>Simple POS</strong><br>jL. ABC123</p>
+                                            <img src="<?php echo base_url(); ?>assets/dist/img/logo1.png" style="max-width:150px;" alt="JOJOBA">
+                                            <p style="text-align:center;"><strong>JOJOBA PET CENTER</strong><br>Jl. Raya Jatinangor KM. 22<br>Delivery Via WhatsApp 0822-3609-3604</p>
                                             <p></p>
                                         </div>
                                         <p>

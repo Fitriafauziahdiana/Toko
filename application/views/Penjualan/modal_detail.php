@@ -24,7 +24,7 @@
                 <h4 class="quick">Quick Overview:</h4>
                 <p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
                 <div class="add-to">
-                    <a href="<?php echo base_url() . 'index.php/penjualan/tambah_barang/' . $detail->id_barang . '/1' ?>" type="button" class="btn btn-danger my-cart-btn my-cart-btn1">Add to Cart</a>
+                    <a href="<?php echo base_url() . 'index.php/penjualan/tambah_barang/' . $detail->id_barang . '/1' ?>" type="button" class="btn btn-success my-cart-btn my-cart-btn1">Add to Cart</a>
                 </div>
             </div>
         </div>
