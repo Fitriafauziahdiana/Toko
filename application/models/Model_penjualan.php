@@ -16,7 +16,7 @@ class Model_penjualan extends Ci_Model
 
 	function hasilcari($key)
 	{
-		return $this->db->or_like('nama_barang', $key)
+		return $this->db->or_like( 'barcode', $key )
 			->get('barang')
 			->result();
 	}
@@ -124,4 +124,6 @@ class Model_penjualan extends Ci_Model
 				->get('stok', $number, $offset)->result();
 		}
 	}
+
+	
 }

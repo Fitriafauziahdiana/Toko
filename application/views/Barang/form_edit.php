@@ -19,6 +19,16 @@
 				<div class="box-body">
 					<?php echo form_open_multipart('Barang/edit', array('role' => "form", 'id' => "myForm", 'data-toggle' => "validator")); ?>
 					<div class="form-group">
+						<label for="barcode" class="control-label">Barcode</label>
+						<div class="input-group">
+							<input type="text" class="form-control" name="barcode" id="barcode" value="<?php echo $record['barcode'] ?>" data-error="Barcode harus diisi" placeholder="barcode" value="" required />
+							<span class="input-group-addon">
+								<span class="fa fa-cubes"></span>
+							</span>
+						</div>
+						<div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group">
 						<label for="nama_barang" class="control-label">Nama Barang</label>
 						<div class="input-group">
 							<input type="text" class="form-control" name="nama_barang" id="nama_barang" value="<?php echo $record['nama_barang'] ?>" data-error="Nama Barang harus diisi" placeholder="nama barang" value="" required />

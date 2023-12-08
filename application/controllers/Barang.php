@@ -35,12 +35,14 @@ class Barang extends CI_Controller
             } else {
                 // proses barang
                 $id = $this->input->post('id');
+                $barcode = $this->input->post('barcode');
                 $nama = $this->input->post('nama_barang');
                 $kategori = $this->input->post('kategori');
                 $harga = $this->input->post('harga');
                 $ukuran = $this->input->post('ukuran');
                 $foto = $this->upload->data('file_name');
                 $data = array(
+                    'barcode' => $barcode,
                     'nama_barang' => $nama,
                     'id_kategori' => $kategori,
                     'ukuran' => $ukuran,
@@ -89,12 +91,14 @@ class Barang extends CI_Controller
                 } else {
                     echo 'errors occured';
                 }
+                $barcode = $this->input->post('barcode');
                 $nama       =   $this->input->post('nama_barang');
                 $kategori   =   $this->input->post('kategori');
                 $harga      =   $this->input->post('harga');
                 $ukuran     =   $this->input->post('ukuran');
                 $foto = $this->upload->data('file_name');
                 $data       = array(
+                    'barcode' => $barcode,
                     'nama_barang' => $nama,
                     'id_kategori' => $kategori,
                     'ukuran' => $ukuran,

@@ -45,6 +45,7 @@
 						<thead>
 							<tr>
 								<th>No</th>
+								<th>kode Barcode</th>
 								<th>Nama Barang</th>
 								<th>Kategori Barang</th>
 								<th>Ukuran</th>
@@ -58,6 +59,7 @@
 							foreach ($record as $r) { ?>
 							<tr>
 								<td><?php echo ++$no; ?></td>
+								<td><?php echo $r->barcode; ?></td>
 								<td><?php echo $r->nama_barang; ?></td>
 								<td><?php echo $r->nama_kategori; ?></td>
 								<td><?php echo $r->nama_ukuran; ?></td>

@@ -27,11 +27,11 @@
                                         <p align="right"><a href="#" title="Cari Barang"><i class="fa fa-search"></i></a> Cari Barang</p>
                                         <form>
                                             <div class="form-group">
-                                                <input class="form-control" name="idbarang" type="text" onkeyup="showResult(this.value)" placeholder="Ketik Nama Barang">
+                                                <input class="form-control" name="idbarang" type="text" onkeyup="showResult(this.value)" placeholder="Ketik Kode Barcode">
                                                 <div id="hasilcari"></div>
                                             </div>
                                         </form>
-                                    </div>
+                                    </div>   
                                 </div>
                                 <div id="list-table-div">
                                     <div class="fixed-table-header">
