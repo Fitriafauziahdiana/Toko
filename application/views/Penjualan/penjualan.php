@@ -355,6 +355,7 @@
                                                 <option value="1">Cash</option>
                                                 <option value="2">Transfer</option>
                                                 <option value="3">Qris</option>
+                                                <option value="4">Belum Bayar</option>
                                             </select>
                                         </div>
                                     </div>

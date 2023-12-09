@@ -17,8 +17,8 @@ class Model_kategori extends CI_Model {
 
 		function edit()
 		{
-			$data=array('nama_kategori'=> $this->input->post('kategori'));
-			$this->db->where('id_kategori', $this->input->post('id'));
+			$data=array('nama_kategori'=> $this->input->update('kategori'));
+			$this->db->where('id_kategori', $this->input->update('id'));
 			$this->db->update('kategori',$data);
 		}
 

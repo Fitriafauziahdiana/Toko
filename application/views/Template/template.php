@@ -175,13 +175,6 @@
 						</a>
 					</li>
 					<li>
-						<a href="<?php echo base_url() ?>index.php/stok">
-							<i class="fa fa-cubes"></i> <span>STOK</span>
-							<span class="pull-right-container">
-							</span>
-						</a>
-					</li>
-					<li>
 						<a href="<?php echo base_url() ?>index.php/penjualan">
 							<i class="fa fa-shopping-cart"></i> <span>PENJUALAN</span>
 							<span class="pull-right-container">
