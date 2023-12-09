@@ -24,14 +24,16 @@
                             <div class="well well-sm" id="leftdiv">
                                 <div id="lefttop" style="margin-bottom:5px;">
                                     <div class="form-group" style="margin-bottom:5px;">
-                                        <p align="right"><a href="#" title="Cari Barang"><i class="fa fa-search"></i></a> Cari Barang</p>
-                                        <form>
-                                            <div class="form-group">
-                                                <input class="form-control" name="idbarang" type="text" onkeyup="showResult(this.value)" placeholder="Ketik Kode Barcode">
-                                                <div id="hasilcari"></div>
-                                            </div>
-                                        </form>
-                                    </div>   
+                                        <p align="right"><a href="#" title="Cari Barang"><i class="fa fa-search"></i></a> Form Barang</p>
+                                        <label for="barcode" class="control-label">Barcode</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="idbarang" type="text" onkeyup="showResult(this.value)" placeholder="Ketik Kode Barcode">
+                                            <div id="hasilcari"></div>
+                                            <span class="input-group-addon">
+                                            </span>
+                                        </div>
+                                        <div class="help-block with-errors"></div>
+					                </div>   
                                 </div>
                                 <div id="list-table-div">
                                     <div class="fixed-table-header">
@@ -189,7 +191,7 @@
                                         <label for="ukuran" class="control-label">Ukuran</label>
                                         <div class="input-group">
                                             <select class="form-control" name="ukuran">
-                                                <option value=""">Pilih Semua</option>
+                                                <option value="">Pilih Semua</option>
                                                 <?php
                                                 foreach ($ukuran as $u) {
                                                     echo "<option value=' $u->id_ukuran'>$u->nama_ukuran</option>";

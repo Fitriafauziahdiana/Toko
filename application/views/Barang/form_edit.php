@@ -1,13 +1,16 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/app/css/style.css">
-<?php if ($this->session->flashdata('message')) { ?>
-<div class="col-lg-12 alerts">
-	<div class="alert alert-dismissible alert-success">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <h4> <i class="icon fa fa-check"></i> Suscess</h4>
-    	<p><?php echo $this->session->flashdata('message'); ?></p>
-    </div>
-</div>
-<?php } else { } ?>
+<?php if($this->session->flashdata('message')) { ?>
+	<div class="col-lg-12 alerts">
+		<div class="alert alert-dismissible alert-danger">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<h4> <i class="icon fa fa-ban"></i> Error</h4>
+			<p>
+				<?php echo $this->session->flashdata('message'); ?>
+			</p>
+		</div>
+	</div>
+<?php } else {
+} ?>
 
 <section class="content">
 	<div class="row">
@@ -19,11 +22,13 @@
 				<div class="box-body">
 					<?php echo form_open_multipart('Barang/edit', array('role' => "form", 'id' => "myForm", 'data-toggle' => "validator")); ?>
 					<div class="form-group">
-						<label for="barcode" class="control-label">Barcode</label>
+						<label for="nama_barang" class="control-label">Kode Barcode</label>
 						<div class="input-group">
-							<input type="text" class="form-control" name="barcode" id="barcode" value="<?php echo $record['barcode'] ?>" data-error="Barcode harus diisi" placeholder="barcode" value="" required />
+							<input type="text" class="form-control" name="barcode" id="barcode"
+								value="<?php echo $record['barcode'] ?>" data-error="Kode Barcode harus diisi"
+								placeholder="Kode Barcode" value="" required />
 							<span class="input-group-addon">
-								<span class="fa fa-cubes"></span>
+								<span class="fa fa-cube"></span>
 							</span>
 						</div>
 						<div class="help-block with-errors"></div>
@@ -31,7 +36,9 @@
 					<div class="form-group">
 						<label for="nama_barang" class="control-label">Nama Barang</label>
 						<div class="input-group">
-							<input type="text" class="form-control" name="nama_barang" id="nama_barang" value="<?php echo $record['nama_barang'] ?>" data-error="Nama Barang harus diisi" placeholder="nama barang" value="" required />
+							<input type="text" class="form-control" name="nama_barang" id="nama_barang"
+								value="<?php echo $record['nama_barang'] ?>" data-error="Nama Barang harus diisi"
+								placeholder="nama barang" value="" required />
 							<span class="input-group-addon">
 								<span class="fa fa-cube"></span>
 							</span>
@@ -43,8 +50,8 @@
 						<div class="input-group">
 							<select name="kategori" class="form-control">
 								<?php
-								foreach ($kategori as $k) {
-									if ($record['id_kategori'] == $k->id_kategori) {
+								foreach($kategori as $k) {
+									if($record['id_kategori'] == $k->id_kategori) {
 										echo "<option value='$k->id_kategori' selected='selected'>$k->nama_kategori</option>";
 									} else {
 										echo "<option value=' $k->id_kategoi'>$k->nama_kategori</option>";
@@ -63,8 +70,8 @@
 						<div class="input-group">
 							<select class="form-control" name="ukuran">
 								<?php
-								foreach ($ukuran as $u) {
-									if ($record['ukuran'] == $u->id_ukuran) {
+								foreach($ukuran as $u) {
+									if($record['ukuran'] == $u->id_ukuran) {
 										echo "<option value='$u->id_ukuran' selected='selected'>$u->nama_ukuran</option>";
 									} else {
 										echo "<option value=' $u->id_ukuran'>$u->nama_ukuran</option>";
@@ -80,7 +87,9 @@
 					<div class="form-group">
 						<label for="harga" class="control-label">Harga</label>
 						<div class="input-group">
-							<input type="text" name="harga" id="harga" data-error="harga harus di isi" class="form-control" value="<?php echo $record['harga'] ?>" placeholder="Harga Barang" required>
+							<input type="text" name="harga" id="harga" data-error="harga harus di isi"
+								class="form-control" value="<?php echo $record['harga'] ?>" placeholder="Harga Barang"
+								required>
 							<span class="input-group-addon">
 								<span class="fas fa-money">
 								</span>

@@ -72,28 +72,29 @@
                 <div id="print-area">
                     <div class="box-body">
                         <div id="wrapper">
-                            <div id="receiptData" style="width: auto; max-width: 580px; min-width: 250px; margin: 0 auto;">
+                            <div id="receiptData" style="width: 50; max-width: 350px; min-width:1px; margin:0 auto;">
                                 <div id="receipt-data">
                                     <div>
                                         <div style="text-align:center;">
-                                            <img src="<?php echo base_url(); ?>assets/dist/img/logo1.png" style="max-width:50px;" alt="JOJOBA">
-                                            <p style="text-align:center;"><strong>JOJOBA PET CENTER</strong><br>Jl. Raya Jatinangor KM. 22<br>Delivery Via WhatsApp 0822-3609-3604</p>
+                                            <p style="text-align:center;"><strong>JOJOBA PET CENTER</strong><br>Jl.Raya Jatinangor KM.22<br>Delivery Via WhatsApp 0822-3609-3604</p>
                                             <p></p>
                                         </div>
+                                        <p></p>
+                                        <p></p>
                                         <p>
                                             Tanggal : <?php echo $tanggal . ' ' . $jam; ?> <br>
                                             Nomor Transaksi : <?php echo $nota; ?><br>
                                             Nama Pelanggan : <?php echo $pelanggan; ?> <br>
                                             Operator : <?php echo $operator; ?> <br>
                                         </p>
-                                        <div style="clear:both;"></div>
+                                        <div style="clear:both; "></div>
                                         <table class="table table-striped table-condensed">
                                             <thead>
                                                 <tr>
-                                                    <th class="text-center" style="width: 50%; border-bottom: 2px solid #ddd;">Nama Barang</th>
-                                                    <th class="text-center" style="width: 12%; border-bottom: 2px solid #ddd;">QTY</th>
-                                                    <th class="text-center" style="width: 24%; border-bottom: 2px solid #ddd;">Harga</th>
-                                                    <th class="text-center" style="width: 26%; border-bottom: 2px solid #ddd;">Subtotal</th>
+                                                    <th class="text-center" style="width: 6%; border-bottom: 1px solid #ddd;">Nama Barang</th>
+                                                    <th class="text-center" style="width: 6%; border-bottom: 1px solid #ddd;">QTY</th>
+                                                    <th class="text-center" style="width: 6%; border-bottom: 1px solid #ddd;">Harga</th>
+                                                    <th class="text-center" style="width: 6%; border-bottom: 1px solid #ddd;">Subtotal</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -106,7 +107,10 @@
                                                 </tr>
                                                 <?php } ?>
                                             </tbody>
-                                            <tfoot>
+                                            
+                                        </table>
+                                        <table class="table table-striped table-condensed" style="margin-top:9px;">
+<tfoot>
                                                 <tr>
                                                     <th colspan="2">Total</th>
                                                     <th colspan="2" class="text-right">Rp.<?php echo number_format($total); ?></th>
@@ -121,13 +125,17 @@
                                                 </tr>
                                             </tfoot>
                                         </table>
-                                        <table class="table table-striped table-condensed" style="margin-top:10px;">
+                                        <table class="table table-striped table-condensed" style="margin-top:9px;">
                                             <tbody>
                                                 <tr>
-                                                    <td class="text-left">transaksi:</td>
+                                                    <td class="text-right">transaksi:</td>
                                                     <td><?php echo $metode; ?></td>
+                                                </tr> 
+                                                <tr>    
                                                     <td class="text-right">Bayar :</td>
                                                     <td>Rp.<?php echo number_format($bayar); ?></td>
+                                                </tr>
+                                                <tr>
                                                     <td class="text-right">Kembalian:</td>
                                                     <td>Rp.<?php echo number_format($kembalian); ?></td>
                                                 </tr>
@@ -149,14 +157,14 @@
                                             </tbody>
                                         </table>
                                         <div class="well well-sm" style="margin-top:10px;">
-                                            <div style="text-align: center;">Terimakasih Sudah Belanja :)</div>
+                                            <div style="text-align: center;">Terimakasih Sudah Belanja</div>
                                         </div>
                                     </div>
                                     <div style="clear:both;"></div>
                                 </div>
                             </div>
-                            <div id="buttons" style="padding-top:10px; text-transform:uppercase;" class="no-print">
-                                <span class="pull-right col-xs-12">
+                            <div id="buttons" style="padding-top:1px; text-transform:uppercase;" class="no-print">
+                                <span class="pull-left col-xs-12">
                                     <button onclick="printDiv('print-area')" class="btn btn-block btn-primary">Print</button> </span>
                                 <span class="col-xs-12">
                                     <a class="btn btn-block btn-warning" href="<?php echo base_url() ?>index.php/penjualan">Kembali ke Penjualan</a>
