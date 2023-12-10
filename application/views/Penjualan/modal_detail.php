@@ -17,6 +17,10 @@
             <div class="col-md-7 span-1 ">
                 <h3><?php echo $detail->nama_barang; ?>(<?php echo $detail->stok_barang; ?>pcs)</h3>
                 <p class="in-para"> There are many variations of passages of Lorem Ipsum.</p>
+                <div class="buy_single">
+                    <span class="reducedfrom ">Rp <?php echo number_format($detail->harga_beli); ?></span>
+                    <div class="clearfix"></div>
+                </div>
                 <div class="price_single">
                     <span class="reducedfrom ">Rp <?php echo number_format($detail->harga); ?></span>
                     <div class="clearfix"></div>

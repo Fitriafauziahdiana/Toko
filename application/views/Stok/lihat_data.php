@@ -46,7 +46,8 @@
 								<th>No</th>
 								<th>Nama barang</th>
 								<th>Kategori barang</th>
-								<th>Harga Barang</th>
+								<th>Harga Beli Barang</th>
+								<th>Harga Jual Barang</th>
 								<th>Stok Barang</th>
 								<th>Kapasitas</th>
 								<th>Tanggal</th>
@@ -61,6 +62,7 @@
 								<td><?php echo ++$no ?> </td>
 								<td><?php echo $s->nama_barang; ?></td>
 								<td><?php echo $s->nama_kategori; ?></td>
+								<td>Rp.<?php echo number_format($s->harga_beli); ?></td>
 								<td>Rp.<?php echo number_format($s->harga); ?></td>
 								<td>
 									<?php echo $s->stok_barang; ?>

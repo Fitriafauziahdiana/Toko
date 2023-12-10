@@ -110,6 +110,7 @@ class Penjualan extends CI_Controller
                 'id'        => $result->id_barang,
                 'name'      => $result->nama_barang,
                 'qty'       => $qty,
+                'price'     => $result->harga_beli,
                 'price'     => $result->harga,
                 'size'      => $result->ukuran,
                 'namesize' => $result->nama_ukuran,
@@ -220,6 +221,7 @@ class Penjualan extends CI_Controller
                 'id_dtlpen'    => $id_dtlpenjualan['id'],
                 'id_barang'     => $items['id_barang'],
                 'jumlah_stok'     => $items['qty'],
+                'harga_beli' => $items['price'],
                 'harga_barang' => $items['price'],
                 'sub_total' => $items['subtotal'],
             );

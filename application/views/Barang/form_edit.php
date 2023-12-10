@@ -100,10 +100,23 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="harga" class="control-label">Harga</label>
+						<label for="harga_beli" class="control-label">Harga Beli</label>
 						<div class="input-group">
-							<input type="text" name="harga" id="harga" data-error="harga harus di isi"
-								class="form-control" value="<?php echo $record['harga'] ?>" placeholder="Harga Barang"
+							<input type="text" name="harga_beli" id="harga_beli" data-error="harga beli harus di isi"
+								class="form-control" value="<?php echo $record['harga_beli'] ?>" placeholder="Harga Beli Barang"
+								required>
+							<span class="input-group-addon">
+								<span class="fas fa-money">
+								</span>
+							</span>
+						</div>
+						<div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group">
+						<label for="harga" class="control-label">Harga Jual</label>
+						<div class="input-group">
+							<input type="text" name="harga" id="harga" data-error="harga jual harus di isi"
+								class="form-control" value="<?php echo $record['harga'] ?>" placeholder="Harga  Jual Barang"
 								required>
 							<span class="input-group-addon">
 								<span class="fas fa-money">

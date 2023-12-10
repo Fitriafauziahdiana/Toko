@@ -41,7 +41,8 @@
                                             <thead>
                                                 <tr class="info">
                                                     <th>Nama Barang</th>
-                                                    <th style="width: 15%;text-align:center;">Harga</th>
+                                                    <th style="width: 15%;text-align:center;">Harga Beli</th>
+                                                    <th style="width: 15%;text-align:center;">Harga Jual</th>
                                                     <th style="width: 15%;text-align:center;">Qty</th>
                                                     <th style="width: 20%;text-align:center;">Subtotal</th>
                                                     <th style="width: 20px;" class="satu absorbing-column"><i class="fa fa-trash-o"></i></th>
@@ -85,6 +86,12 @@
                                                                                     <?= $items['name']; ?> (<?= $items['namesize'] ?>)
                                                                                 </span>
                                                                             </a>
+                                                                            <?php elseif ($items['size'] == 6) : ?>
+                                                                            <a href="#" class="btn bg-orange btn-block btn-xs">
+                                                                                <span class="sname">
+                                                                                    <?= $items['name']; ?> (<?= $items['namesize'] ?>)
+                                                                                </span>
+                                                                            </a>
                                                                         <?php else : ?>
                                                                             <a href="#" class="btn bg-black btn-block btn-xs">
                                                                                 <span class="sname">
@@ -93,6 +100,7 @@
                                                                             </a>
                                                                         <?php endif; ?>
                                                                     </td>
+                                                                    <td align="right">Rp.<?= $this->fungsi->rupiah($items['price']); ?></td>
                                                                     <td align="right">Rp.<?= $this->fungsi->rupiah($items['price']); ?></td>
                                                                     <td style="text-align:center;">
                                                                         <form action="<?= base_url('index.php/ubah_qty'); ?>" method="POST">
@@ -265,6 +273,9 @@
                                                         </h6>
                                                     </div>
                                                     <div class="mid-2">
+                                                    <p align="center"><label>Rp.<?= $this->fungsi->rupiah($row->harga_beli); ?></label></p>
+                                                    </div>
+                                                    <div class="mid-3">
                                                         <p align="center"><label>Rp.<?= $this->fungsi->rupiah($row->harga); ?></label></p>
                                                     </div>
                                                     <div class="add">

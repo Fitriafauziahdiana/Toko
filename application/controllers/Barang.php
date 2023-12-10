@@ -38,6 +38,7 @@ class Barang extends CI_Controller
                 $barcode = $this->input->post('barcode');
                 $nama = $this->input->post('nama_barang');
                 $kategori = $this->input->post('kategori');
+                $harga_beli = $this->input->post('harga_beli');
                 $harga = $this->input->post('harga');
                 $ukuran = $this->input->post('ukuran');
                 $foto = $this->upload->data('file_name');
@@ -46,6 +47,7 @@ class Barang extends CI_Controller
                     'nama_barang' => $nama,
                     'id_kategori' => $kategori,
                     'ukuran' => $ukuran,
+                    'harga_beli' => $harga_beli,
                     'harga' => $harga,
                     'foto' => $foto,
                 );
@@ -94,6 +96,7 @@ class Barang extends CI_Controller
                 $barcode = $this->input->post('barcode');
                 $nama       =   $this->input->post('nama_barang');
                 $kategori   =   $this->input->post('kategori');
+                $harga_beli = $this->input->post('harga_beli');
                 $harga      =   $this->input->post('harga');
                 $ukuran     =   $this->input->post('ukuran');
                 $foto = $this->upload->data('file_name');
@@ -102,6 +105,7 @@ class Barang extends CI_Controller
                     'nama_barang' => $nama,
                     'id_kategori' => $kategori,
                     'ukuran' => $ukuran,
+                    'harga_beli' => $harga_beli,
                     'harga' => $harga,
                     'foto' => $foto,
                 );

@@ -49,7 +49,8 @@
 								<th>Nama Barang</th>
 								<th>Kategori Barang</th>
 								<th>Ukuran</th>
-								<th>Harga</th>
+								<th>Harga Beli</th>
+								<th>Harga Jual</th>
 								<th>Foto</th>
 								<th>Aksi</th>
 							</tr>
@@ -63,6 +64,7 @@
 								<td><?php echo $r->nama_barang; ?></td>
 								<td><?php echo $r->nama_kategori; ?></td>
 								<td><?php echo $r->nama_ukuran; ?></td>
+								<td>Rp.<?php echo number_format($r->harga_beli); ?></td>
 								<td>Rp.<?php echo number_format($r->harga); ?></td>
 								<td>
 									<a href="<?php echo (site_url('uploads/' . $r->foto)); ?>" class="image-link">
