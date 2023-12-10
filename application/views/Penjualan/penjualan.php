@@ -115,7 +115,7 @@
                                                                         </form>
                                                                     </td>
                                                                     <td align="center">
-                                                                        Rp.<?= $this->fungsi->rupiah($items['subtotalaba']); ?>
+                                                                        Rp.<?= $this->fungsi->rupiah($items['sub_totalaba']); ?>
                                                                     </td>
                                                                     <td align="center">
                                                                         Rp.<?= $this->fungsi->rupiah($items['subtotal']); ?>
