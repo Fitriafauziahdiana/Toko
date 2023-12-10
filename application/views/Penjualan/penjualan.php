@@ -44,7 +44,7 @@
                                                     <th style="width: 15%;text-align:center;">Harga Beli</th>
                                                     <th style="width: 15%;text-align:center;">Harga Jual</th>
                                                     <th style="width: 15%;text-align:center;">Qty</th>
-                                                    <th style="width: 20%;text-align:center;">Subtotal Laba</th>
+                                                    <th style="width: 20%;text-align:center;">Subtotal Beli</th>
                                                     <th style="width: 20%;text-align:center;">Subtotal Jual</th>
                                                     <th style="width: 20px;" class="satu absorbing-column"><i class="fa fa-trash-o"></i></th>
                                                 </tr>
@@ -115,7 +115,7 @@
                                                                         </form>
                                                                     </td>
                                                                     <td align="center">
-                                                                        Rp.<?= $this->fungsi->rupiah($items['sub_totalaba']); ?>
+                                                                        Rp.<?= $this->fungsi->rupiah($items['subtotall']); ?>
                                                                     </td>
                                                                     <td align="center">
                                                                         Rp.<?= $this->fungsi->rupiah($items['subtotal']); ?>
@@ -229,9 +229,9 @@
                                 <div class="items">
                                     <?php foreach ($result as $row) {  ?>
                                         <div class="col-md-3 pro-1">
-                                            <div class="col-m" style="padding:0.5em;">
-                                                <a href="#" onclick="detailCart('<?php echo $row->id_barang ?>')" class="offer-img">
-                                                    <div class="img1">
+                                            <div class="col-m" style="padding:0.0em;">
+                                                <a href="#" onclick="detailCart('<?php echo $row->id_barang ?>')" class="offer-img" align="center">
+                                                    <div class="img1" align="center">
                                                         <img src="<?php echo  base_url('uploads/') . $row->foto; ?>" style="width: 100px; height: 100px;" class="img-responsive" alt="<?php echo $row->nama_barang; ?>">
                                                     </div>
                                                     <?php if ($row->ukuran == 1) : ?>
@@ -278,14 +278,12 @@
                                                             <br>(<?php echo $row->stok_barang ?>pcs)
                                                         </h6>
                                                     </div>
-                                                    <div class="mid-2">
+                                                    <div class="mid-1">
                                                     <p align="center"><label>Rp.<?= $this->fungsi->rupiah($row->harga_beli); ?></label></p>
+                                                    <p align="center"><label>Rp.<?= $this->fungsi->rupiah($row->harga); ?></label></p>
                                                     </div>
-                                                    <div class="mid-3">
-                                                        <p align="center"><label>Rp.<?= $this->fungsi->rupiah($row->harga); ?></label></p>
-                                                    </div>
-                                                    <div class="add">
-                                                        <a href="<?php echo base_url() . 'index.php/penjualan/tambah_barang/' . $row->id_barang . '/1' ?>" type="button" class="btn btn-danger my-cart-btn my-cart-b">Add to Cart</a>
+                                                    <div class="add" align="center">
+                                                        <a href="<?php echo base_url() . 'index.php/penjualan/tambah_barang/' . $row->id_barang . '/1' ?>" type="button" align="center" class="btn btn-danger my-cart-btn my-cart-b">Add to Cart</a>
                                                     </div>
                                                 </div>
                                             </div>

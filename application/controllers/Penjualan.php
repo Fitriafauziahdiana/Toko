@@ -223,7 +223,7 @@ class Penjualan extends CI_Controller
                 'jumlah_stok'     => $items['qty'],
                 'harga_beli' => $items['prices'],
                 'harga_barang' => $items['price'],
-                'sub_totalaba' => $items['sub_totalaba'],
+                'sub_totalaba' => $items['subtotall'],
                 'sub_total' => $items['subtotal'],
             );
         }
