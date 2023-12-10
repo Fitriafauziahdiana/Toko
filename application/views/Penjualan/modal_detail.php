@@ -17,10 +17,19 @@
             <div class="col-md-7 span-1 ">
                 <h3><?php echo $detail->nama_barang; ?>(<?php echo $detail->stok_barang; ?>pcs)</h3>
                 <p class="in-para"> There are many variations of passages of Lorem Ipsum.</p>
-                <div class="buy_single">
+                <div class="price_single">
                     <span class="reducedfrom ">Rp <?php echo number_format($detail->harga_beli); ?></span>
                     <div class="clearfix"></div>
                 </div>
+                <h4 class="quick">Quick Overview:</h4>
+                <p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
+                <div class="add-to">
+                    <a href="<?php echo base_url() . 'index.php/penjualan/tambah_barang/' . $detail->id_barang . '/1' ?>" type="button" class="btn btn-success my-cart-btn my-cart-btn1">Add to Cart</a>
+                </div>
+            </div>
+            <div class="col-md-7 span-1 ">
+                <h3><?php echo $detail->nama_barang; ?>(<?php echo $detail->stok_barang; ?>pcs)</h3>
+                <p class="in-para"> There are many variations of passages of Lorem Ipsum.</p>
                 <div class="price_single">
                     <span class="reducedfrom ">Rp <?php echo number_format($detail->harga); ?></span>
                     <div class="clearfix"></div>

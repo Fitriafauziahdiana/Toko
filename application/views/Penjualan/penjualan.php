@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="box-body">
-                    <div style="width: 425px;" class="cart">
+                    <div style="width: 460px;" class="cart">
                         <div id="pos">
                             <div class="well well-sm" id="leftdiv">
                                 <div id="lefttop" style="margin-bottom:5px;">
@@ -44,7 +44,8 @@
                                                     <th style="width: 15%;text-align:center;">Harga Beli</th>
                                                     <th style="width: 15%;text-align:center;">Harga Jual</th>
                                                     <th style="width: 15%;text-align:center;">Qty</th>
-                                                    <th style="width: 20%;text-align:center;">Subtotal</th>
+                                                    <th style="width: 20%;text-align:center;">Subtotal Laba</th>
+                                                    <th style="width: 20%;text-align:center;">Subtotal Jual</th>
                                                     <th style="width: 20px;" class="satu absorbing-column"><i class="fa fa-trash-o"></i></th>
                                                 </tr>
                                             </thead>
@@ -100,8 +101,10 @@
                                                                             </a>
                                                                         <?php endif; ?>
                                                                     </td>
+
+                                                                    <td align="right">Rp.<?= $this->fungsi->rupiah($items['prices']); ?></td>
                                                                     <td align="right">Rp.<?= $this->fungsi->rupiah($items['price']); ?></td>
-                                                                    <td align="right">Rp.<?= $this->fungsi->rupiah($items['price']); ?></td>
+                                                                    
                                                                     <td style="text-align:center;">
                                                                         <form action="<?= base_url('index.php/ubah_qty'); ?>" method="POST">
                                                                             <input type="hidden" id="idbrg" name="idbarang" value="<?= $items['id_barang']; ?>">
@@ -110,6 +113,9 @@
                                                                             <button class="btn btn-primary btn-sm fa fa-check" style="display:none;" title="Simpan">
                                                                             </button>
                                                                         </form>
+                                                                    </td>
+                                                                    <td align="center">
+                                                                        Rp.<?= $this->fungsi->rupiah($items['subtotalaba']); ?>
                                                                     </td>
                                                                     <td align="center">
                                                                         Rp.<?= $this->fungsi->rupiah($items['subtotal']); ?>
@@ -136,7 +142,7 @@
                                         <td class="text-center" style="padding-right:10px;"><span id="count"><?= $this->cart->total_items(); ?></span></td>
                                         <td width="25%" style="font-weight:bold;">Grand Total</td>
                                         <td class="text-right" style="font-weight:bold;" colspan="2"><span id="total"><span id="count">Rp.<?= $this->fungsi->rupiah($this->cart->total()); ?>
-                                                    <input readonly type="hidden" name="total" id="total' onfocus=" startCalculate()" onblur="stopCalc()" value="<?= $this->cart->total(); ?>" required="">
+                                                    <input readonly type="hidden" name="total" id="total" onfocus=" startCalculate()" onblur="stopCalc()" value="<?= $this->cart->total(); ?>" required="">
                                                 </span></span></td>
                                     </tr>
                                 </table>
