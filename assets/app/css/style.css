@@ -3,6 +3,10 @@
 		text-align: center;
 	}
 
+	.hide{
+		visibility: hidden !important;
+	}
+
 	#diskon {
 		width: 40px;
 	}

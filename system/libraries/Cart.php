@@ -113,6 +113,7 @@ class CI_Cart {
 		{
 			// No cart exists so we'll set some base values
 			$this->_cart_contents = array('cart_total' => 0, 'total_items' => 0);
+			$this->_cart_contents = array('cart_totall' => 0, 'total_items' => 0);
 		}
 
 		log_message('info', 'Cart Class Initialized');
@@ -198,6 +199,12 @@ class CI_Cart {
 			return FALSE;
 		}
 
+		if ( ! isset($items['id'], $items['qty'], $items['prices'], $items['name']))
+		{
+			log_message('error', 'The cart array must contain a product ID, quantity, prices, and name.');
+			return FALSE;
+		}
+
 		// --------------------------------------------------------------------
 
 		// Prep the quantity. It can only be a number.  Duh... also trim any leading zeros
@@ -234,6 +241,7 @@ class CI_Cart {
 
 		// Prep the price. Remove leading zeros and anything that isn't a number or decimal point.
 		$items['price'] = (float) $items['price'];
+		$items['prices'] = (float) $items['prices'];
 
 		// We now need to create a unique identifier for the item being inserted into the cart.
 		// Every time something is added to the cart it is stored in the master cart array.
@@ -370,6 +378,11 @@ class CI_Cart {
 			$items['price'] = (float) $items['price'];
 		}
 
+		if (isset($items['prices']))
+		{
+			$items['prices'] = (float) $items['prices'];
+		}
+
 		// product id & name shouldn't be changed
 		foreach (array_diff($keys, array('id', 'name')) as $key)
 		{
@@ -403,6 +416,20 @@ class CI_Cart {
 			$this->_cart_contents[$key]['subtotal'] = ($this->_cart_contents[$key]['price'] * $this->_cart_contents[$key]['qty']);
 		}
 
+
+		$this->_cart_contents['total_items'] = $this->_cart_contents['cart_totall'] = 0;
+		foreach ($this->_cart_contents as $key => $val)
+		{
+			// We make sure the array contains the proper indexes
+			if ( ! is_array($val) OR ! isset($val['prices'], $val['qty']))
+			{
+				continue;
+			}
+
+			$this->_cart_contents['cart_totall'] += ($val['prices'] * $val['qty']);
+			$this->_cart_contents['total_items'] += $val['qty'];
+			$this->_cart_contents[$key]['subtotall'] = ($this->_cart_contents[$key]['prices'] * $this->_cart_contents[$key]['qty']);
+		}
 		// Is our cart empty? If so we delete it from the session
 		if (count($this->_cart_contents) <= 2)
 		{
@@ -430,6 +457,19 @@ class CI_Cart {
 	public function total()
 	{
 		return $this->_cart_contents['cart_total'];
+	}
+
+	// --------------------------------------------------------------------
+
+	
+	/**
+	 * Cart Totall
+	 *
+	 * @return	int
+	 */
+	public function totall()
+	{
+		return $this->_cart_contents['cart_totall'];
 	}
 
 	// --------------------------------------------------------------------
@@ -482,6 +522,7 @@ class CI_Cart {
 		// Remove these so they don't create a problem when showing the cart table
 		unset($cart['total_items']);
 		unset($cart['cart_total']);
+		unset($cart['cart_totall']);
 
 		return $cart;
 	}
@@ -498,7 +539,7 @@ class CI_Cart {
 	 */
 	public function get_item($row_id)
 	{
-		return (in_array($row_id, array('total_items', 'cart_total'), TRUE) OR ! isset($this->_cart_contents[$row_id]))
+		return (in_array($row_id, array('total_items', 'cart_total',  'cart_totall'), TRUE) OR ! isset($this->_cart_contents[$row_id]))
 			? FALSE
 			: $this->_cart_contents[$row_id];
 	}
@@ -560,7 +601,7 @@ class CI_Cart {
 	 */
 	public function destroy()
 	{
-		$this->_cart_contents = array('cart_total' => 0, 'total_items' => 0);
+		$this->_cart_contents = array('cart_total', 'cart_totall' => 0, 'total_items' => 0);
 		$this->CI->session->unset_userdata('cart_contents');
 	}
 

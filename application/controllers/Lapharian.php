@@ -28,11 +28,11 @@ class Lapharian extends CI_Controller
         }
         $card = [
             [
-                'box'         => 'green',
+                'box'         => 'red',
                 'total'     => 'Rp.' . number_format($this->Model_lapharian->income()->gtotal),
-                'title'        => 'Pendapatan',
-                'description'    => 'Total Pendapatan',
-                'icon'        => 'money'
+                'title'        => 'Total Harga Jual',
+                'description'    => 'Total Pendapatan Kotor',
+                'icon'        => 'cube'
             ],
             [
                 'box'         => 'blue',
@@ -42,18 +42,25 @@ class Lapharian extends CI_Controller
                 'icon'        => 'shopping-cart'
             ],
             [
-                'box'         => 'yellow-active',
+                'box'         => 'yellow',
                 'total'     =>  $this->Model_lapharian->total_transaksi()->total,
-                'title'        => 'Total Penjualan',
-                'description'    => 'Total Penjualan',
+                'title'        => 'Total Transaksi',
+                'description'    => 'Total Transaksi',
                 'icon'        => 'shopping-basket'
             ],
             [
-                'box'         => 'red',
+                'box'         => 'purple',
                 'total'     => $laris,
                 'title'        => 'Barang Terlaris',
                 'description'    => 'Barang Terlaris',
-                'icon'        => 'cube'
+                'icon'        => 'cubes'
+            ],            
+            [
+                'box'         => 'green',
+                'total'     => 'Rp.' . number_format($this->Model_lapharian->laba()->gtotall),
+                'title'        => 'Total Harga Modal',
+                'description'    => 'Total Pendapatan',
+                'icon'        => 'money'
             ],
         ];
         $info_card = json_decode(json_encode($card), FALSE);

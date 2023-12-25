@@ -28,11 +28,11 @@ class Lapbulanan extends CI_Controller
         }
         $card = [
             [
-                'box'         => 'green',
+                'box'         => 'red',
                 'total'     => 'Rp.' . number_format($this->Model_lapbulanan->income()->gtotal),
                 'title'        => 'Pendapatan',
                 'description'    => 'Total Pendapatan',
-                'icon'        => 'money'
+                'icon'        => 'cube'
             ],
             [
                 'box'         => 'blue',
@@ -42,18 +42,25 @@ class Lapbulanan extends CI_Controller
                 'icon'        => 'shopping-cart'
             ],
             [
-                'box'         => 'yellow-active',
+                'box'         => 'yellow',
                 'total'     =>  $this->Model_lapbulanan->total_transaksi()->total,
                 'title'        => 'Total Penjualan',
                 'description'    => 'Total Penjualan',
                 'icon'        => 'shopping-basket'
             ],
             [
-                'box'         => 'red',
+                'box'         => 'purple',
                 'total'     => $laris,
                 'title'        => 'Barang Terlaris',
                 'description'    => 'Barang Terlaris',
-                'icon'        => 'cube'
+                'icon'        => 'cubes'
+            ],
+            [
+                'box'         => 'green',
+                'total'     =>'Rp.' . number_format($this->Model_lapbulanan->laba()->gtotall),
+                'title'        => 'Total Harga Modal',
+                'description'    => 'Total Pendapatan',
+                'icon'        => 'money'
             ],
 
         ];

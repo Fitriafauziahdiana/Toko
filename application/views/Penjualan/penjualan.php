@@ -24,7 +24,6 @@
                             <div class="well well-sm" id="leftdiv">
                                 <div id="lefttop" style="margin-bottom:5px;">
                                     <div class="form-group" style="margin-bottom:5px;">
-                                        <p align="right"><a href="#" title="Cari Barang"><i class="fa fa-search"></i></a> Form Barang</p>
                                         <label for="barcode" class="control-label">Barcode</label>
                                         <div class="input-group">
                                             <input type="text" class="form-control" name="idbarang" type="text" onkeyup="showResult(this.value)" placeholder="Ketik Kode Barcode">
@@ -37,7 +36,7 @@
                                 </div>
                                 <div id="list-table-div">
                                     <div class="fixed-table-header">
-                                        <table class="table table-striped list-table" style="margin:0;">
+                                        <table class="table table-striped list-table" style="margin: 3px;">
                                             <thead>
                                                 <tr class="info">
                                                     <th>Nama Barang</th>
@@ -49,6 +48,7 @@
                                                     <th style="width: 20px;" class="satu absorbing-column"><i class="fa fa-trash-o"></i></th>
                                                 </tr>
                                             </thead>
+                                            
                                             <div>
                                                 <div class="card card-body bg-light">
                                                     <tbody>
@@ -87,7 +87,7 @@
                                                                                     <?= $items['name']; ?> (<?= $items['namesize'] ?>)
                                                                                 </span>
                                                                             </a>
-                                                                            <?php elseif ($items['size'] == 6) : ?>
+                                                                        <?php elseif ($items['size'] == 6) : ?>
                                                                             <a href="#" class="btn bg-orange btn-block btn-xs">
                                                                                 <span class="sname">
                                                                                     <?= $items['name']; ?> (<?= $items['namesize'] ?>)
@@ -102,8 +102,8 @@
                                                                         <?php endif; ?>
                                                                     </td>
 
-                                                                    <td align="right">Rp.<?= $this->fungsi->rupiah($items['prices']); ?></td>
-                                                                    <td align="right">Rp.<?= $this->fungsi->rupiah($items['price']); ?></td>
+                                                                    <td align="left">Rp.<?= $this->fungsi->rupiah($items['prices']); ?></td>
+                                                                    <td align="left">Rp.<?= $this->fungsi->rupiah($items['price']); ?></td>
                                                                     
                                                                     <td style="text-align:center;">
                                                                         <form action="<?= base_url('index.php/ubah_qty'); ?>" method="POST">
@@ -114,10 +114,10 @@
                                                                             </button>
                                                                         </form>
                                                                     </td>
-                                                                    <td align="center">
+                                                                    <td align="left">
                                                                         Rp.<?= $this->fungsi->rupiah($items['subtotall']); ?>
                                                                     </td>
-                                                                    <td align="center">
+                                                                    <td align="left">
                                                                         Rp.<?= $this->fungsi->rupiah($items['subtotal']); ?>
                                                                     </td>
                                                                     <td align="center">
@@ -138,14 +138,27 @@
                                 <div style="clear:both;"></div>
                                 <table id="totaltbl" class="table table-condensed totals" style="margin-bottom:10px;">
                                     <tr class="info">
-                                        <td width="25%">Total Barang</td>
+                                        <td width="25%">Total Barang  Jual</td>
                                         <td class="text-center" style="padding-right:10px;"><span id="count"><?= $this->cart->total_items(); ?></span></td>
-                                        <td width="25%" style="font-weight:bold;">Grand Total</td>
+                                        <td width="25%" style="font-weight:bold;">Grand Total Jual</td>
                                         <td class="text-right" style="font-weight:bold;" colspan="2"><span id="total"><span id="count">Rp.<?= $this->fungsi->rupiah($this->cart->total()); ?>
-                                                    <input readonly type="hidden" name="total" id="total" onfocus=" startCalculate()" onblur="stopCalc()" value="<?= $this->cart->total(); ?>" required="">
+                                                    <input readonly type="hidden" name="total" id="total" onfocus=" startCalculate()" onblur="stopCalc()" value="<?= $this->cart->total(); ?>"required="">
                                                 </span></span></td>
                                     </tr>
                                 </table>
+                                <div style="clear:both;"></div>
+                                                        
+                                <table id="totaltbll" class="table table-condensed totals" style="margin-bottom:10px;">
+                                    <tr class="info">
+                                        <td width="25%">Total Barang Beli</td>
+                                        <td class="text-center" style="padding-right:10px;"><span id="count"><?= $this->cart->total_items(); ?></span></td>
+                                        <td width="25%" style="font-weight:bold;">Grand Total Beli</td>
+                                        <td class="text-right" style="font-weight:bold;" colspan="2"><span id="totall"><span id="count">Rp.<?= $this->fungsi->rupiah($this->cart->totall()); ?>
+                                                    <input readonly type="hidden" name="totall" id="totall" onfocus=" startCalculates()" onblur="stopCalc()" value="<?= $this->cart->totall(); ?>"required="">
+                                                </span></span></td>
+                                    </tr>
+                                </table>
+
                             </div>
                             <div id="botbuttons" class="col-xs-12 text-center">
                                 <div class="row">
@@ -323,12 +336,18 @@
                                             <td id="mdl" width="25%" class="text-center">
                                                 <span id="item_count"><?= $this->cart->total_items(); ?></span>
                                             </td>
+
                                             <td id="mdl" width="25%" style="border-right-color: #FFF !important;">Grand Total</td>
                                             <td id="mdl" class="text-right">
                                                 <input type="hidden" name="totalpure" id="totalpure" value="<?php echo  $this->cart->total(); ?>" class="form-control kb-text">
                                                 <span>Rp.<input readonly type="number" id="total" name="grandtotal" onfocus="startCalculate()" onblur="stopCalc()" value="<?= $this->cart->total(); ?>" required="">
                                                 </span>
+
+                                                <input type="hidden" name="totalpure" id="totalpure" value="<?php echo  $this->cart->totall(); ?>" class="form-control kb-text">
+                                                <span><input readonly type="number" id="totall" name="grandtotall" onfocus="startCalculates()" onblur="stopCalc()" value="<?= $this->cart->totall(); ?>" required class="hide">
+                                                </span>
                                             </td>
+                                               
                                         </tr class="table-secondary">
                                         <tr>
                                             <td id="mdl" style="border-right-color: #FFF !important;">Diskon</td>
@@ -435,6 +454,32 @@
         let g = (a - f);
         let h = (d - g);
         document.frm_byr.total.value = (g);
+        document.frm_byr.kembalian.value = (h);
+        let hasil;
+        hasil = (g);
+        let bilangan = (g);
+        let number_string = bilangan.toString(),
+            sisa = number_string.length % 3,
+            rupiah = number_string.substr(0, sisa),
+            ribuan = number_string.substr(sisa).match(/\d{3}/g);
+        if (ribuan) {
+            separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+
+    }
+
+
+    function Calculates() {
+        let a = <?= $this->cart->totall(); ?>;
+        let b = document.frm_byr.totall.value;
+        let c = document.frm_byr.diskon.value;
+        let d = document.frm_byr.bayar.value;
+        let e = 100;
+        let f = (a / e * c);
+        let g = (a - f);
+        let h = (d - g);
+        document.frm_byr.totall.value = (g);
         document.frm_byr.kembalian.value = (h);
         let hasil;
         hasil = (g);

@@ -71,6 +71,16 @@ class Model_lapharian extends Ci_Model
             ->row();
     }
 
+    public function laba()
+    {
+        return $this->db->select('sum(grand_totall) as gtotall')
+            ->from('detail_penjualan')
+            ->where('day(tgl_trf) = day(CURRENT_date())')
+            ->get()
+            ->row();
+    }
+
+
     public function total_penjualan()
     {
         return $this->db->select('sum(jumlah_stok) as total')

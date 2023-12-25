@@ -89,8 +89,9 @@
                             <th>No Transaksi</th>
                             <th>Nama Pelanggan</th>
                             <th>Tanggal Transaksi</th>
-                            <th>Jam Transaksi</th>
                             <th>Metode Pembayaran</th>
+                            <th>Harga Beli</th>
+                            <th>Harga Jual</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -102,8 +103,9 @@
                             <td><?php echo $row->no_trf; ?></td>
                             <td><?php echo $row->nama_pelanggan; ?></td>
                             <td><?php echo $row->tgl_trf; ?></td>
-                            <td><?php echo $row->jam_trf; ?></td>
                             <td><?php echo $row->metode; ?></td>
+                            <td><?php echo $row->grand_totall; ?></td>
+                            <td><?php echo $row->grand_total; ?></td>
                             <td><?php
                                     echo anchor(site_url('penjualan/struk/' . $row->id), '<i class="fa fa-eye"></i>&nbsp;&nbsp;Detail', array('title' => 'edit', 'class' => 'btn btn-sm btn-info'));
                                     echo '&nbsp';
@@ -132,21 +134,21 @@
             buttons: [{
                     extend: 'csvHtml5',
                     exportOptions: {
-                        columns: [0, 1, 2, 3, 4, 5, ],
+                        columns: [0, 1, 2, 3, 4, 5, 6 ],
                     },
                 },
                 {
                     extend: 'excelHtml5',
                     title: 'LAPORAN PENJUALAN',
                     exportOptions: {
-                        columns: [0, 1, 2, 3, 4, 5],
+                        columns: [0, 1, 2, 3, 4, 5, 6],
                     },
                 },
                 {
                     extend: 'copyHtml5',
                     title: 'LAPORAN PENJUALAN',
                     exportOptions: {
-                        columns: [0, 1, 2, 3, 4, 5],
+                        columns: [0, 1, 2, 3, 4, 5, 6],
                     },
                 },
                 {
@@ -156,7 +158,7 @@
                     title: 'LAPORAN PENJUALAN',
                     download: 'open',
                     exportOptions: {
-                        columns: [0, 1, 2, 3, 4, 5],
+                        columns: [0, 1, 2, 3, 4, 5, 6],
                     },
                     customize: function(doc) {
                         doc.content[1].table.widths = Array(doc.content[1].table.body[0].length + 1).join('*').split('');
@@ -170,7 +172,7 @@
                     pageSize: 'A4',
                     title: 'LAPORAN PENJUALAN',
                     exportOptions: {
-                        columns: [0, 1, 2, 3, 4, 5],
+                        columns: [0, 1, 2, 3, 4, 5, 6],
                     },
                 },
             ],

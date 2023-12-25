@@ -24,10 +24,12 @@ class Penjualan extends CI_Controller
             $ukuran = $this->input->post('ukuran');
             // ---- $this->input->post untuk memproses data dari form $_POST
             $total = $this->Model_penjualan->stok_list();
+            $totall = $this->Model_penjualan->stok_list();
             // load library pagination(halaman) beserta confignya
             $this->load->library('pagination');
             $config['base_url'] = base_url('penjualan/store/');  //halaman utama
             $config['total_rows'] = $total; //total baris berdasarkan dari databse
+            $config['total_rows'] = $totall; //total baris berdasarkan dari databse
             $config['per_page']         = 0; // set 0 karena masuk kondisi ketika memilih filter "pilih semua"
             $config['first_link']       = 'First'; // config tombol halaman awal
             $config['last_link']        = 'Last'; // config tombol halaman akhir
@@ -62,10 +64,12 @@ class Penjualan extends CI_Controller
         } else {
             
             $total = $this->Model_penjualan->stok_list();
+            $totall = $this->Model_penjualan->stok_list();
             $this->load->library('pagination');
             $config['base_url'] = base_url('penjualan/store/');
             $config['per_page']         = 8;
             $config['total_rows'] = $total;
+            $config['total_rows'] = $totall;
             $config['first_link']       = 'First';
             $config['last_link']        = 'Last';
             $config['next_link']        = 'Next';
@@ -192,6 +196,7 @@ class Penjualan extends CI_Controller
             'nama_pelanggan' => $this->input->post('pelanggan'),
             'totalpure' => $this->input->post('totalpure'),
             'grand_total ' => $this->input->post('grandtotal'),
+            'grand_totall ' => $this->input->post('grandtotall'),
             'diskon' => $this->input->post('diskon'),
             'bayar' => $this->input->post('bayar'),
             'kembalian' => $this->input->post('kembalian'),
@@ -223,8 +228,8 @@ class Penjualan extends CI_Controller
                 'jumlah_stok'     => $items['qty'],
                 'harga_beli' => $items['prices'],
                 'harga_barang' => $items['price'],
-                'sub_totalaba' => $items['subtotall'],
                 'sub_total' => $items['subtotal'],
+                'sub_totall' => $items['subtotall'],
             );
         }
 
@@ -240,6 +245,7 @@ class Penjualan extends CI_Controller
         }
     }
 
+    
     function struk($id)
     {
         $cek = $this->Model_penjualan->cek_transaksi($this->uri->segment(3));
@@ -252,6 +258,7 @@ class Penjualan extends CI_Controller
             'total' => $cek[0]->totalpure,
             'diskon' => $cek[0]->diskon,
             'grand_total' => $cek[0]->grand_total,
+            'grand_totall' => $cek[0]->grand_totall,
             'result' => $cek,
             'metode' => $cek[0]->metode,
             'bayar' => $cek[0]->bayar,

@@ -56,4 +56,6 @@ $route['penjualan'] = 'penjualan/store';
 $route['hapus_cart/(:any)'] = 'penjualan/hapus_cart/$1';
 $route['ubah_qty'] = 'penjualan/ubah_qty';
 $route['cancel'] = 'penjualan/cancel';
+$route['penjualan/deleteall'] = 'penjualan/deleteall';
 $route['translate_uri_dashes'] = FALSE;
+

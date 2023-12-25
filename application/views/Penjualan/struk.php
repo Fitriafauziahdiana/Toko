@@ -55,7 +55,7 @@
 </style>
 <?php if ($this->session->flashdata('message')) { ?>
 <div class="col-lg-12 alerts">
-    <div class="alert alert-dismissible alert-success">
+    <div class="alert alert-dismissible alert-dismissible">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <h4> <i class="icon fa fa-check"></i> Sukses</h4>
         <p><?php echo $this->session->flashdata('message'); ?></p>
@@ -76,7 +76,7 @@
                                 <div id="receipt-data">
                                     <div>
                                         <div style="text-align:center;">
-                                            <p style="text-align:center;"><strong>JOJOBA PET CENTER</strong><br>Jl. Raya Jatinangor No.256 Hegarmanah>Delivery Via WhatsApp 0822-3609-3604</p>
+                                            <p style="text-align:center;"><strong>JOJOBA PET CENTER</strong><br>Jl. Raya Jatinangor No.256 Hegarmanah Delivery Via WhatsApp 0822-3609-3604</p>
                                             <p></p>
                                         </div>
                                         <p></p>
@@ -110,11 +110,8 @@
                                             
                                         </table>
                                         <table class="table table-striped table-condensed" style="margin-top:9px;">
-<tfoot>
-                                                <tr>
-                                                    <th colspan="2">Total</th>
-                                                    <th colspan="2" class="text-right">Rp.<?php echo number_format($total); ?></th>
-                                                </tr>
+
+                                        <tfoot>
                                                 <tr>
                                                     <th colspan="2">Diskon</th>
                                                     <th colspan="2" class="text-right"><?php echo $diskon; ?>%</th>

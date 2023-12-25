@@ -22,6 +22,16 @@ class Model_lapbulanan extends Ci_Model
             ->row();
     }
 
+
+    public function laba()
+    {
+        return $this->db->select('sum(grand_totall) as gtotall')
+            ->from('detail_penjualan')
+            ->where('month(tgl_trf) = month(CURRENT_date())')
+            ->get()
+            ->row();
+    }
+
     public function total_penjualan()
     {
         return $this->db->select('sum(jumlah_stok) as total')
