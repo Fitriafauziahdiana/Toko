@@ -223,8 +223,8 @@ class Penjualan extends CI_Controller
                 'jumlah_stok'     => $items['qty'],
                 'harga_beli' => $items['prices'],
                 'harga_barang' => $items['price'],
+                'sub_totalaba' => $items['subtotall'],
                 'sub_total' => $items['subtotal'],
-                'sub_totall' => $items['subtotall'],
             );
         }
 
@@ -240,7 +240,6 @@ class Penjualan extends CI_Controller
         }
     }
 
-    
     function struk($id)
     {
         $cek = $this->Model_penjualan->cek_transaksi($this->uri->segment(3));

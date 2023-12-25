@@ -54,11 +54,6 @@ class Model_penjualan extends Ci_Model
 		return $this->db->where('id_byr', $id)->get('pembayaran')->row();
 	}
 
-	function get_bayar($id)
-	{
-		return $this->db->where('id_byr', $id)->get('pembayaran')->row();
-	}
-
 	function get_nourut()
 	{
 		return $this->db->select('max(id) as nomor')

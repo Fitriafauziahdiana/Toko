@@ -87,7 +87,7 @@
                                                                                     <?= $items['name']; ?> (<?= $items['namesize'] ?>)
                                                                                 </span>
                                                                             </a>
-                                                                        <?php elseif ($items['size'] == 6) : ?>
+                                                                            <?php elseif ($items['size'] == 6) : ?>
                                                                             <a href="#" class="btn bg-orange btn-block btn-xs">
                                                                                 <span class="sname">
                                                                                     <?= $items['name']; ?> (<?= $items['namesize'] ?>)

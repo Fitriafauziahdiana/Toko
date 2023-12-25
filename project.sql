@@ -245,7 +245,7 @@ CREATE TABLE `penjualan` (
 -- Dumping data untuk tabel `penjualan`
 --
 
-INSERT INTO `penjualan` (`id_transaksi`, `barcode`, `id_dtlpen`, `id_barang`, `jumlah_stok`, `harga_beli`, `harga_barang`, `sub_totall`, `sub_total`) VALUES
+INSERT INTO `penjualan` (`id_transaksi`, `barcode`, `id_dtlpen`, `id_barang`, `jumlah_stok`, `harga_beli`, `harga_barang`, `sub_totalaba`, `sub_total`) VALUES
 (1, NULL, 19, 81, 1, 0, 10000, 0, 10000),
 (2, NULL, 5, 6, 1, 0, 2000, 0, 2000),
 (3, NULL, 6, 13, 1, 0, 16000, 0, 16000),
