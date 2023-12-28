@@ -34,18 +34,6 @@
 						<div class="help-block with-errors"></div>
 					</div>
 
-					<!-- <div class="form-group" style="margin-bottom:5px;">
-                        <p align="right"><a href="#" title="Cari Barang"><i class="fa fa-search"></i></a> Form Barang</p>
-                        <label for="barcode" class="control-label">Barcode</label>
-                        <div class="input-group">
-                        	<input type="text" class="form-control" name="idbarang" type="text" onkeyup="showResult(this.value)" placeholder="Ketik Kode Barcode">
-                        	<div id="hasilcari"></div>
-                        	<span class="input-group-addon">
-                        	</span>
-                        </div>
-                        <div class="help-block with-errors"></div>
-					 </div> -->
-
 
 
 					<div class="form-group">

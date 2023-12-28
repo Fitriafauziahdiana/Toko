@@ -20,6 +20,14 @@ class Model_penjualan extends Ci_Model
 			->get('barang')
 			->result();
 	}
+	
+//<!-- baru banget -->
+	function hasilcarii($key)
+	{
+		return $this->db->or_like('nama_barang', $key)
+			->get('barang')
+			->result();
+	}
 
 	function stok_list()
 	{

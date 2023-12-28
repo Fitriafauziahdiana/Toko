@@ -32,7 +32,20 @@
                                             </span>
                                         </div>
                                         <div class="help-block with-errors"></div>
-					                </div>   
+					                </div> 
+                                    
+                                    <!-- baru banget -->
+
+                                    <div class="form-group" style="margin-bottom:5px;">
+                                        <p align="right"><a href="#" title="Cari Barang"><i class="fa fa-search"></i></a> Cari Barang</p>
+                                        <form>
+                                            <div class="form-group">
+                                                <input class="form-control" name="idbarang" type="text" onkeyup="showResultt(this.value)" placeholder="Ketik Nama Barang">
+                                                <div id="hasilcarii"></div>
+                                            </div>
+                                        </form>
+                                    </div>
+            
                                 </div>
                                 <div id="list-table-div">
                                     <div class="fixed-table-header">
@@ -550,6 +563,29 @@
             }
         }
         xmlhttp.open("GET", "<?= base_url(); ?>index.php/penjualan/caribarang?q=" + str, true);
+        xmlhttp.send();
+    }
+
+    // <!-- baru banget -->
+    
+    function showResultt(str) {
+        if (str.length == 0) {
+            document.getElementById("hasilcarii").innerHTML = "";
+            document.getElementById("hasilcarii").style.border = "0px";
+            return;
+        }
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("hasilcarii").innerHTML = this.responseText;
+                document.getElementById("hasilcarii").style.border = "1px solid #A5ACB2";
+            }
+        }
+        xmlhttp.open("GET", "<?= base_url(); ?>index.php/penjualan/caribarangg?q=" + str, true);
         xmlhttp.send();
     }
 

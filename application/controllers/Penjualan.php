@@ -131,6 +131,16 @@ class Penjualan extends CI_Controller
             echo '<a href="' . base_url() . 'index.php/penjualan/tambah_barang/' . $result->id_barang . '/1">' . $result->nama_barang . '</a><br />';
         }
     }
+
+    //<!-- baru banget -->
+    function caribarangg()
+    {
+        $key = $this->input->get('q');
+        $data = $this->Model_penjualan->hasilcarii($key);
+        foreach ($data as $result) {
+            echo '<a href="' . base_url() . 'index.php/penjualan/tambah_barang/' . $result->id_barang . '/1">' . $result->nama_barang . '</a><br />';
+        }
+    }
     function ubah_qty()
     {
         $barang = $this->Model_penjualan->lihat_barang($this->input->post('idbarang'));
